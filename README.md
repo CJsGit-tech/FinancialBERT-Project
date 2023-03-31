@@ -5,6 +5,8 @@ The TextInspector app is designed to help future researchers review and convenie
 ```
 streamlit run main.py
 ```
+Please note that this app is created for our datasets. This means that the app will only work properly only if your datasets contain columns of text, sentiment label, and topics. Feel free to modify the code when you see fit while you are continuing from where we left off.
+
 
 ## Overview of the project
 The project aims to use transformer architecture for stock market index prediction, utilizing NLP models to extract text features. Specifically, we are using the [CLS] token. Nonetheless, we have noticed that research does not address the <b> potential sentiment leakage from building text features.</b> Therefore, we see this as a research opportunity in which we utilize the transformer architecture to perform text-based feature extraction and pay thoughtful attention to the aspect of sentiment leakage. 
