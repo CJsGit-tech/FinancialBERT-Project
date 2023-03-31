@@ -14,7 +14,7 @@ the corpus between 2010 and 2018 but not in 2019 and above. Without proper corpu
 sentiment models peek into the future and understand the word “COVID” contributes to a negative financial movement.
 ```
 
-## Repo Structure Overview
+## How to use the Repo
 
 ## Data Sources 
 Our market index data came from the yahoo finance API, which was quite convenient to extract using python. Meanwhile, our text data was collected from various sources. These sources included 1) Kaggle 2) Financial Times 3) New York Times API. Since our news datasets did not have topics or sentiment labels attached to them. We utilized the pre-trained models to generate labels while assuming they were the experts in the financial industry. Generating the topic labels ensured that we kept news that were relevant to financial market movements. For example, topics like Politics and General Market.
