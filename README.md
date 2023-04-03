@@ -7,9 +7,16 @@ An example of potential sentiment leakage from building text features can be tha
 the corpus between 2010 and 2018 but not in 2019 and above. Without proper corpus split based on timestamps, 
 sentiment models peek into the future and understand the word “COVID” contributes to a negative financial movement.
 ```
+<p align="center">
+  <img src='visualizations/model_architecture.PNG' height=300px width=400px> </img>
+</p>
+
+
 [LINK TO OUR REPORT] : TBD
 
 ## How to use the Repo
+
+
 
 
 ## TextInspectorApp
