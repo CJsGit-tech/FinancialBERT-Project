@@ -1,5 +1,5 @@
 bert-extractive-summarizer
-transformers-interpret
+captum
 transformers
 datasets
 streamlit
