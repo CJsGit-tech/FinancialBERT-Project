@@ -15,7 +15,16 @@ sentiment models peek into the future and understand the word “COVID” contri
 [LINK TO OUR REPORT] : TBD
 
 ## How to use the Repo
+**sample notebooks**<br>
+This folder contains most of the compnents to allow future researchers to replicate our work. You will find a few notebooks dedicate to data processing and some others are model building.
+<br><br>
 
+**txtInspect**<br>
+This folder has the original code for our text inspector app. This app is desinged for reviewing your processed data in a web application fashion. Meanwhile, it provides interactive components where users could modify dataset and download it as a new copy.
+<br><br>
+
+**visualizations**<br>
+This folder includes our results and a few visualizations that we constructed for our report. See report link.
 
 
 
