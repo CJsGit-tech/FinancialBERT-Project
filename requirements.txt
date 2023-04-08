@@ -1,5 +1,5 @@
 bert-extractive-summarizer
-captum
+transformers-interpret
 transformers
 datasets
 streamlit
@@ -19,10 +19,15 @@ warnings
 umap-learn
 pytorch
 datetime
-matplotlib.pyplot
+matplotlib
 ta
 tensorflow
 optuna
 joblib
 ast
 catboost
+pywt
+pmdarima
+statsmodels
+newspaper3k
+nltk
