@@ -16,16 +16,18 @@ sentiment models peek into the future and understand the word “COVID” contri
 
 ## How to use the Repo
 **sample notebooks**<br>
-This folder contains most of the compnents to allow future researchers to replicate our work. You will find a few notebooks dedicate to data processing and some others are model building.
-<br><br>
+This folder contains most of the compnents to allow future researchers to replicate our work. You will find a few notebooks dedicate to data processing and some others are model building. Under this folder there are subfolders titled in 
+1) data (where datasets and models are saved) <br>
+2) DataProcessing (EDA and label generation) <br>
+3) Modeling (Models for Regression and Classification)
+<br>
 
 **txtInspect**<br>
 This folder has the original code for our text inspector app. This app is desinged for reviewing your processed data in a web application fashion. Meanwhile, it provides interactive components where users could modify dataset and download it as a new copy.
-<br><br>
+<br>
 
 **visualizations**<br>
 This folder includes our results and a few visualizations that we constructed for our report. See report link.
-
 
 
 ## TextInspectorApp
