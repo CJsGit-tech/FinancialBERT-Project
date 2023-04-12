@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>099-Integrated Gradients Inspection Results</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Modeling-Integrated Gradients Inspection Results</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -36,7 +36,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .m { color: var(--jp-mirror-editor-number-color) } /* Literal.Number */
 .highlight .s { color: var(--jp-mirror-editor-string-color) } /* Literal.String */
 .highlight .ow { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator.Word */
-.highlight .pm { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation.Marker */
 .highlight .w { color: var(--jp-mirror-editor-variable-color) } /* Text.Whitespace */
 .highlight .mb { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Bin */
 .highlight .mf { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Float */
@@ -14465,6 +14464,10 @@ a.anchor-link {
   display: none;
 }
 
+.highlight  {
+  margin: 0.4em;
+}
+
 /* Input area styling */
 .jp-InputArea {
   overflow: hidden;
@@ -14474,26 +14477,9 @@ a.anchor-link {
   overflow: hidden;
 }
 
-.CodeMirror.cm-s-jupyter .highlight pre {
-/* weird, but --jp-code-padding defined to be 5px but 4px horizontal padding is hardcoded for pre.CodeMirror-line */
-  padding: var(--jp-code-padding) 4px;
+.CodeMirror pre {
   margin: 0;
-
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  color: inherit;
-
-}
-
-.jp-OutputArea-output pre {
-  line-height: inherit;
-  font-family: inherit;
-}
-
-.jp-RenderedText pre {
-  color: var(--jp-content-font-color1);
-  font-size: var(--jp-code-font-size);
+  padding: 0;
 }
 
 /* Using table instead of flexbox so that we can use break-inside property */
@@ -14573,12 +14559,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: {
-                    automatic: true
+                    linebreaks: { 
+                    automatic: true 
                     }
                 }
             });
-
+        
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14593,7 +14579,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Integrated-Gradient">Integrated Gradient<a class="anchor-link" href="#Integrated-Gradient">&#182;</a></h1><p>https://towardsdatascience.com/interpreting-the-prediction-of-bert-model-for-text-classification-5ab09f8ef074</p>
+<h1 id="Integrated-Gradient">Integrated Gradient<a class="anchor-link" href="#Integrated-Gradient">&#182;</a></h1><p><a href="https://towardsdatascience.com/interpreting-the-prediction-of-bert-model-for-text-classification-5ab09f8ef074">https://towardsdatascience.com/interpreting-the-prediction-of-bert-model-for-text-classification-5ab09f8ef074</a></p>
 
 </div>
 </div>
@@ -14626,10 +14612,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model_version</span> <span class="o">=</span> <span class="s1">'CVs/full/bert-base-uncased/fold_full-bert-base-uncased/'</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model_version</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_version</span><span class="p">)</span>
 <span class="n">bert</span> <span class="o">=</span> <span class="n">BertModel</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_version</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'CVs/full/articles_2015_2019_nd.csv'</span><span class="p">,</span><span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="s1">'text'</span><span class="p">,</span><span class="s1">'sentiment'</span><span class="p">])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/BERT/articles_2015_2019_nd_sample.csv&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14643,7 +14629,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
+
 <div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -14753,7 +14741,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <span class="n">token_list</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">convert_ids_to_tokens</span><span class="p">(</span><span class="n">input_ids</span><span class="p">)</span>
 
     <span class="n">baseline_input_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">cls_token_id</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">baseline_token_id</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">text_ids</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="n">sep_token_id</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">input_ids</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span><span class="s1">'cpu'</span><span class="p">),</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">baseline_input_ids</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span><span class="s1">'cpu'</span><span class="p">),</span> <span class="n">token_list</span>
+    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">input_ids</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;cpu&#39;</span><span class="p">),</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">baseline_input_ids</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;cpu&#39;</span><span class="p">),</span> <span class="n">token_list</span>
 
 <span class="k">def</span> <span class="nf">summarize_attributions</span><span class="p">(</span><span class="n">attributions</span><span class="p">):</span>
 
@@ -14784,10 +14772,19 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
                                         <span class="n">convergence_score</span> <span class="o">=</span> <span class="n">delta</span><span class="p">)</span>
 
     <span class="n">viz</span><span class="o">.</span><span class="n">visualize_text</span><span class="p">([</span><span class="n">score_vis</span><span class="p">])</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">How to read the results?</span>
+<span class="sd">Here is the steps for you to understand how the model interprets its&#39; predictions.</span>
+<span class="sd">1. Given the predictied label (0 or 1)</span>
+<span class="sd">2. Green backgrounds contribute positively to the predicted label</span>
+<span class="sd">3. Where as the red backgrounds contribute negatively to the predicted label</span>
+<span class="sd">&quot;&quot;&quot;</span>    
     
+
 <span class="k">for</span> <span class="n">text</span><span class="p">,</span> <span class="n">sentiment</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="p">[:</span><span class="mi">10</span><span class="p">]:</span>
     <span class="n">true_class</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">if</span> <span class="n">sentiment</span> <span class="o">==</span> <span class="s1">'positive'</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">sentiment</span> <span class="o">==</span> <span class="s1">&#39;positive&#39;</span><span class="p">:</span>
         <span class="n">true_class</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">interpret_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">true_class</span><span class="p">)</span>
 </pre></div>
@@ -14803,7 +14800,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
+
 <div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -14814,7 +14813,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 
 </div>
+
 <div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -14825,7 +14826,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 
 </div>
+
 <div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -14836,7 +14839,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 
 </div>
+
 <div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -14847,7 +14852,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 
 </div>
+
 <div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -14858,7 +14865,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 
 </div>
+
 <div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -14869,7 +14878,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 
 </div>
+
 <div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -14880,7 +14891,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 
 </div>
+
 <div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -14891,7 +14904,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 
 </div>
+
 <div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -14902,7 +14917,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 
 </div>
+
 <div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
