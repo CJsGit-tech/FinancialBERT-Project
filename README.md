@@ -1,7 +1,7 @@
 # MADS-Capstone: FinancialBERT-Project
 
 ## Overview of the project
-The project aims to use transformer architecture for stock market index prediction, utilizing NLP models to extract text features. Specifically, we are using the [CLS] token. Nonetheless, we have noticed that research does not address the <b> potential sentiment leakage from building text features.</b> Therefore, we see this as a research opportunity in which we utilize the transformer architecture to perform text-based feature extraction and pay thoughtful attention to the aspect of sentiment leakage. 
+The project aims to use transformer architecture for stock market index prediction, utilizing NLP models to extract text features. Specifically, we are using the [CLS] token. Nonetheless, we have noticed that research does not address the <b> potential sentiment leakage from building text features as well as lacking cross validation results of model performances.</b> Therefore, we see this as a research opportunity in which we utilize the transformer architecture to perform text-based feature extraction and pay thoughtful attention to the aspect of sentiment leakage. 
 ```
 An example of potential sentiment leakage from building text features can be that some words are found in 
 the corpus between 2010 and 2018 but not in 2019 and above. Without proper corpus split based on timestamps, 
@@ -12,7 +12,7 @@ sentiment models peek into the future and understand the word “COVID” contri
 </p>
 
 
-[LINK TO OUR REPORT] : TBD
+[LINK TO OUR REPORT](https://drive.google.com/file/d/12Ceu-oVn9y0euJOsCV8bOmGvYbsjH1X6/view?usp=share_link)
 
 ## How to use the Repo
 **sample notebooks**<br>
